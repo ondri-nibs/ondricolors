@@ -2,7 +2,7 @@
 title: "README"
 author: "Derek Beaton & Jeremy Tanuan"
 date: "November 25, 2019"
-output: html_document
+output: github_document
 ---
 
 
