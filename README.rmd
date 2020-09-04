@@ -21,7 +21,7 @@ First install the `ondricolors` package
 ```{r}
 
 if(!require('devtools')){
-  devtools::install_github(repo = "dbeaton", subdir = "ONDRIApps/ondricolors")
+  devtools::install_github(repo = "ondri-nibs/ondricolors")
 }
 
 
