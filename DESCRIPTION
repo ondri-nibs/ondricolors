@@ -1,0 +1,13 @@
+Package: ondricolors
+Type: Package
+Title: Color palettes for the ONDRI project
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Tanuan", "Jeremy", role = c("aut")), 
+    person("Beaton","Derek",email="dbeaton@research.baycrest.org",role = c("ctb","cre")))
+Maintainer: <dbeaton@research.baycrest.org>
+Description: A lightweight package for the Ontario Neurodegenerative Disease Research Initiative (ONDRI) color palettes.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
