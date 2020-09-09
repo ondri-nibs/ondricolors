@@ -1,9 +1,9 @@
 README
 ================
 Derek Beaton & Jeremy Tanuan
-2020SEP08
+2020SEP09
 
-# **ONDRI Themes**
+# ondricolors <img src='man/figures/logo.png' align="right" height="139" />
 
 Standardized themes, colors, and templates for the ONDRI project’s
 colors and presentations. Developed by Jeremy Tanuan and Derek

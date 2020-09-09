@@ -6,8 +6,11 @@ output: github_document
 ---
 
 
-**ONDRI Themes**
-===================================
+# ondricolors <img src='man/figures/logo.png' align="right" height="139" />
+
+
+
+
 
 Standardized themes, colors, and templates for the ONDRI project's colors and presentations. Developed by Jeremy Tanuan and Derek Beaton.The package is heavily influenced by and copies key parts of [Karthik Ram's `wesanderson` palette package](https://github.com/karthik/wesanderson).
 
