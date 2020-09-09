@@ -16,11 +16,11 @@ ONDRI's color palettes
 \dontrun{
 ## quick visualization of palettes
 ## continuous example
- pal1 <- ondri_palette(name = "Cohort1", start = 3, n = 20, is_discrete = FALSE)
+ pal1 <- ondri_palette(name = "all_colours", start = 3, n = 20, is_discrete = FALSE)
 image(volcano, col = pal1)
 
 ## discrete example
-pal2 <- ondri_palette(name = "Cohort2")
+pal2 <- ondri_palette(name = "cohorts")
 image(volcano, col = pal2)
 
 ## three toy examples
@@ -28,7 +28,7 @@ library(ondricolors)
 data("toy_ONDRI_data")
 ## first in base R
 ## for the filled pchs
-col2use <- ondri_palette("Cohort2")[as.character(toy_ONDRI_data$COHORT)]
+col2use <- ondri_palette("cohorts")[as.character(toy_ONDRI_data$COHORT)]
 plot(toy_ONDRI_data$X, toy_ONDRI_data$Y, col = col2use, pch = 20)
 
 plot(toy_ONDRI_data$X, toy_ONDRI_data$Y, bg = col2use, pch = 21)
@@ -37,7 +37,7 @@ plot(toy_ONDRI_data$X, toy_ONDRI_data$Y, bg = col2use, pch = 21)
 library(ggplot2)
 ggp_color <- ggplot(toy_ONDRI_data, aes(x = X, y = Y, color = COHORT)) +
   geom_point() +
-  scale_color_manual(values = ondri_palette("Cohort2"))
+  scale_color_manual(values = ondri_palette("cohorts"))
 ggp_color
 }
 }

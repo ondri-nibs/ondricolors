@@ -7,6 +7,7 @@ Authors@R: c(
     person("Beaton","Derek",email="dbeaton@research.baycrest.org",role = c("ctb","cre")))
 Maintainer: <dbeaton@research.baycrest.org>
 Description: A lightweight package for the Ontario Neurodegenerative Disease Research Initiative (ONDRI) color palettes.
+Depends: R (>= 3.5.0)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

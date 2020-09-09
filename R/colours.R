@@ -6,7 +6,8 @@
 
 # list of all palettes
 ondri_palettes <- list(
-  Cohort1 = c("#818385", # Dark
+
+  all_colours = c("#818385", # Dark
               "#F0F2F4", # Light
               "#F9423A", # VCI/CVD Red
               "#F9423A", # VCI/CVD Red
@@ -15,18 +16,32 @@ ondri_palettes <- list(
               "#6BA539", # PD Green
               "#A77BCA"  # ALS Purple
               ),
-  Cohort2 = c("#F9423A", # VCI/CVD Red
-              "#F9423A", # VCI/CVD Red
-              "#ED8B00", # FTD Orange
-              "#62B5E5", # ADMCI Blue
-              "#6BA539", # PD Green
-              "#A77BCA"  # ALS Purple
-              )
+
+  all_colors = c("#818385", # Dark
+                  "#F0F2F4", # Light
+                  "#F9423A", # VCI/CVD Red
+                  "#F9423A", # VCI/CVD Red
+                  "#ED8B00", # FTD Orange
+                  "#62B5E5", # ADMCI Blue
+                  "#6BA539", # PD Green
+                  "#A77BCA"  # ALS Purple
+  ),
+
+  cohorts = c("#F9423A", # VCI/CVD Red
+                 "#F9423A", # VCI/CVD Red
+                 "#ED8B00", # FTD Orange
+                 "#62B5E5", # ADMCI Blue
+                 "#6BA539", # PD Green
+                 "#A77BCA"  # ALS Purple
+  )
+
 )
 
 # renaming columns to match hex values
-names(ondri_palettes$Cohort1) <- c("Dark", "Light", "VCI", "CVD", "FTD", "ADMCI", "PD", "ALS")
-names(ondri_palettes$Cohort2) <- c("CVD", "VCI", "FTD", "ADMCI", "PD", "ALS")
+names(ondri_palettes$all_colors) <- c("dark", "light", "VCI", "CVD", "FTD", "ADMCI", "PD", "ALS")
+names(ondri_palettes$all_colours) <- c("dark", "light", "VCI", "CVD", "FTD", "ADMCI", "PD", "ALS")
+names(ondri_palettes$cohorts) <- c("VCI", "CVD", "FTD", "ADMCI", "PD", "ALS")
+
 
 
 
@@ -35,7 +50,7 @@ names(ondri_palettes$Cohort2) <- c("CVD", "VCI", "FTD", "ADMCI", "PD", "ALS")
 #' These are a handful of colour palettes standard within ONDRI.
 #'
 #' @param name Name of desired palette. Choices are:
-#'   \code{Cohort1}, \code{Cohort2}
+#'   \code{all_colours} (or \code{all_colors}), \code{cohorts}
 #' @param start Starting index of colours desired.
 #'   If omitted, starts at 1.
 #' @param end Ending index of colours desired.
@@ -48,14 +63,14 @@ names(ondri_palettes$Cohort2) <- c("CVD", "VCI", "FTD", "ADMCI", "PD", "ALS")
 #' @export
 #' @keywords colors
 #' @examples
-#' ondri_palette("Cohort1")
-#' ondri_palette("Cohort1", start = 3, end = 7) # Returns only the VCI, FTD, ADMCI, PD, and ALS colours
-#' ondri_palette("Cohort2", n = 20, is_discrete = FALSE)
+#' ondri_palette("all_colours")
+#' ondri_palette("cohorts")
+#' ondri_palette("cohorts", n = 20, is_discrete = FALSE)
 #'
 #' # If you need more colours than normally found in a palette, you
 #' # can use a continuous palette to interpolate between existing
 #' # colours
-#' pal <- ondri_palette(name = "Cohort1", start = 3, n = 20, is_discrete = FALSE)
+#' pal <- ondri_palette(name = "all_colours", start = 3, n = 20, is_discrete = FALSE)
 #' image(volcano, col = pal)
 #'
 #' @details
@@ -91,6 +106,8 @@ ondri_palette <- function(name, start = 1, end, n, is_discrete = TRUE) {
 
 #' @export
 #' @title print.palette
+#' @param x an object used to select a method.
+#' @param ... further arguments passed to or from other methods.
 #' @importFrom graphics rect par image text
 #' @importFrom grDevices rgb
 #' @details

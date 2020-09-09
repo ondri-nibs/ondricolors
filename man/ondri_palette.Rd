@@ -8,7 +8,7 @@ ondri_palette(name, start = 1, end, n, is_discrete = TRUE)
 }
 \arguments{
 \item{name}{Name of desired palette. Choices are:
-\code{Cohort1}, \code{Cohort2}}
+\code{all_colours} (or \code{all_colors}), \code{cohorts}}
 
 \item{start}{Starting index of colours desired.
 If omitted, starts at 1.}
@@ -33,14 +33,14 @@ This function heavily borrows from Karthik Ram's wesanderson package, and specif
 \url{https://github.com/karthik/wesanderson/blob/master/R/colors.R}
 }
 \examples{
-ondri_palette("Cohort1")
-ondri_palette("Cohort1", start = 3, end = 7) # Returns only the VCI, FTD, ADMCI, PD, and ALS colours
-ondri_palette("Cohort2", n = 20, is_discrete = FALSE)
+ondri_palette("all_colours")
+ondri_palette("cohorts")
+ondri_palette("cohorts", n = 20, is_discrete = FALSE)
 
 # If you need more colours than normally found in a palette, you
 # can use a continuous palette to interpolate between existing
 # colours
-pal <- ondri_palette(name = "Cohort1", start = 3, n = 20, is_discrete = FALSE)
+pal <- ondri_palette(name = "all_colours", start = 3, n = 20, is_discrete = FALSE)
 image(volcano, col = pal)
 
 }

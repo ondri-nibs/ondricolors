@@ -1,14 +1,14 @@
 README
 ================
 Derek Beaton & Jeremy Tanuan
-November 25, 2019
+2020SEP08
 
 # **ONDRI Themes**
 
 Standardized themes, colors, and templates for the ONDRI project’s
-colors and presentations. Developed by Jeremy Tanuan and Derek Beaton.
-The package is heavily influenced by and copies key parts of [Karthik
-Ram’s `wesanderson` palette
+colors and presentations. Developed by Jeremy Tanuan and Derek
+Beaton.The package is heavily influenced by and copies key parts of
+[Karthik Ram’s `wesanderson` palette
 package](https://github.com/karthik/wesanderson).
 
 ## **Installation**
@@ -43,52 +43,44 @@ checkmark to each for any that are missing from the necessary packages.
 
 ## **Palettes**
 
-#### **Cohort1**
+### **All colors**
+
+Depending on your flavour (flavor) of English, we provide
 
 ``` r
-ondri_palette("Cohort1")
+ondri_palette("all_colours")
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
-#### **Cohort2**
+or alternatively
 
 ``` r
-ondri_palette("Cohort2")
+ondri_palette("all_colors")
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
-## **Plots**
+### **Cohorts**
 
 ``` r
-## continuous example
-pal <- ondri_palette("Cohort1", start = 3, n = 20, is_discrete = F)
-image(volcano, col = pal)
+ondri_palette("cohorts")
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
-``` r
-## discrete example
-pal <- ondri_palette("Cohort1")
-image(volcano, col = pal)
-```
-
-![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
-
 ## **Usage and examples**
 
-To start let’s see the palette colors
+Let’s see the palette colors
 
 ``` r
 # See all ONDRI palettes
 names(ondri_palettes)
 ```
 
-    ## [1] "Cohort1" "Cohort2"
+    ## [1] "all_colours" "all_colors"  "cohorts"
 
-### A tidy & ggplot2 example
+### A ggplot2 example
 
 Here we provide an example with `ggplot2`.
 
@@ -100,12 +92,12 @@ data('toy_ONDRI_data')
 
 ggp_color <- ggplot(toy_ONDRI_data, aes(x = X, y = Y, color = COHORT)) +
 geom_point() +
-scale_color_manual(values = ondri_palette("Cohort2"))
+scale_color_manual(values = ondri_palette("cohorts"))
 
 ggp_color
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ### A base R example
 
@@ -116,14 +108,14 @@ library(ondricolors)
 data('toy_ONDRI_data')
 
 ## for the filled pchs
-plot(toy_ONDRI_data$X, toy_ONDRI_data$Y, col = ondri_palette("Cohort2")[as.character(toy_ONDRI_data$COHORT)], pch = 20)
+plot(toy_ONDRI_data$X, toy_ONDRI_data$Y, col = ondri_palette("cohorts")[as.character(toy_ONDRI_data$COHORT)], pch = 20)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ``` r
 ## for the pchs with bgs
-plot(toy_ONDRI_data$X, toy_ONDRI_data$Y, bg = ondri_palette("Cohort2")[as.character(toy_ONDRI_data$COHORT)], pch = 21)
+plot(toy_ONDRI_data$X, toy_ONDRI_data$Y, bg = ondri_palette("cohorts")[as.character(toy_ONDRI_data$COHORT)], pch = 21)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-9-2.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-8-2.png)<!-- -->
