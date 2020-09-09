@@ -6,9 +6,12 @@ Authors@R: c(
     person("Tanuan", "Jeremy", role = c("aut")), 
     person("Beaton","Derek",email="dbeaton@research.baycrest.org",role = c("ctb","cre")))
 Maintainer: <dbeaton@research.baycrest.org>
-Description: A lightweight package for the Ontario Neurodegenerative Disease Research Initiative (ONDRI) color palettes.
+Description: A lightweight package for the Ontario Neurodegenerative Disease Research Initiative (ONDRI) color palettes (based on wesanderson by K. Ram).
 Depends: R (>= 3.5.0)
-License: GPL-3
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Suggests:
+    ggplot2
+URL: https://github.com/ondri-nibs/ondricolors/
 RoxygenNote: 7.1.1
